@@ -197,7 +197,11 @@ const TitlePreview = () => {
             : color.replace("#", "")
         }`}</p>
         <p className={classes.code}>{`!set glow ${
-          rainbowGlowEnabled ? "FF0000::00FF00::0000FF" : glow.replace("#", "")
+          glowEnabled
+            ? rainbowGlowEnabled
+              ? "FF0000::00FF00::0000FF"
+              : glow.replace("#", "")
+            : "x"
         }`}</p>
       </Box>
     </Box>
