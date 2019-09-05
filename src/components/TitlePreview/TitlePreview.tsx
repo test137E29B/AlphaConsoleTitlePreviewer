@@ -85,7 +85,7 @@ const TitlePreview = () => {
   const [steamImgSrc, setSteamImgSrc] = useState(
     "https://calculated.gg/ai.jpg"
   );
-  const [title, setTitle] = useState("SAMPLE TEXT");
+  const [title, setTitle] = useState("TITLE TEXT");
   const [color, setColor] = useState("#FF0000");
   const [rainbowColorEnabled, setRainbowColorEnabled] = useState(false);
   const [glow, setGlow] = useState("#FFFFFF");

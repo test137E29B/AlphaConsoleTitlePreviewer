@@ -45,7 +45,6 @@ const useStyles = makeStyles(theme => ({
     position: "absolute",
     padding: 0,
     margin: 0,
-    fontFamily: "LiberationMonoRegular",
     fontWeight: 600,
     userSelect: "none"
   }
@@ -146,7 +145,16 @@ const TitlePreviewGenerator = (props: ITitlePreviewGeneratorProps) => {
           top: `${responsiveCalc("TITLE TEXT TOP", 190)}px`,
           left: `${responsiveCalc("TITLE TEXT LEFT", 260)}px`,
           fontSize: `${responsiveCalc("TITLE TEXT FONTSIZE", 48)}px`,
-          wordSpacing: `-${responsiveCalc("TITLE TEXT WORD SPACING", 15)}px`
+          wordSpacing: `${
+            titleText === "SAMPLE TEXT"
+              ? "normal"
+              : `-${responsiveCalc("TITLE TEXT WORD SPACING", 15)}px`
+          }`,
+          fontFamily: `${
+            titleText === "SAMPLE TEXT"
+              ? "Comic Sans MS"
+              : "LiberationMonoRegular"
+          }`
         }}
       >
         {titleText}
