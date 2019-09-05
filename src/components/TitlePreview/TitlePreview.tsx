@@ -178,7 +178,7 @@ const TitlePreview = () => {
           onSteamIdUpdated={handleSteamIdRefresh}
           titleText={title}
           onTitleTextUpdated={titleText =>
-            setTitle(titleText.toUpperCase().slice(0, 40))
+            setTitle(titleText.toUpperCase().slice(0, 60))
           }
           textColor={color}
           onTextColorUpdated={setColor}
