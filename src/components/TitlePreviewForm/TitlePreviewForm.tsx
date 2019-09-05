@@ -87,7 +87,9 @@ const TitlePreviewForm = (props: ITitlePreviewFormProps) => {
         />
         <Button
           onClick={() => {
-            onSteamIdUpdated(steamId64.replace(/ /g, ""));
+            onSteamIdUpdated(
+              steamId64.replace(/ /g, "").replace(/[\u{1F600}-\u{1F6FF}]/g, "")
+            );
           }}
           color="primary"
         >
