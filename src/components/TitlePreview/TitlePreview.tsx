@@ -5,10 +5,10 @@ import { xml2json } from "xml-js";
 import removeJsonTextAttribute, {
   ISteamProfile
 } from "./../../utils/removeJsonTextAttribute";
-import TitlePreviewGenerator from "../TitlePreviewGenerator/TitlePreviewGenerator";
 import TitlePreviewForm from "../TitlePreviewForm/TitlePreviewForm";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
+import TitlePreviewGenerator from "../TitlePreviewGenerator/TitlePreviewGenerator";
 // import domtoimage from "dom-to-image";
 
 const useStyles = makeStyles(theme => ({
