@@ -9,7 +9,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #222222;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,6 +17,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+.ballBg {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 0;
+  width: 30%;
+  max-width: 400px;
+}
+
+.content {
+  z-index: 1;
+  width: calc(100vw - 64px);
+  height: calc(100vh - 64px);
+  padding: 32px;
+  overflow: hidden;
 }
 
 .App-link {
@@ -27,6 +44,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
