@@ -34,9 +34,9 @@ const useStyles = makeStyles(theme => ({
   },
   steamName: {
     position: "absolute",
-    fontFamily: "Bourgeois W05 Light",
+    fontFamily: "BourgeoisW00-Medium",
     color: "#fff",
-    fontWeight: 700,
+    fontWeight: 500,
     padding: 0,
     margin: 0,
     userSelect: "none"
