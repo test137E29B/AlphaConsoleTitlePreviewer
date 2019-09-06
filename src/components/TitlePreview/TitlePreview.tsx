@@ -15,8 +15,7 @@ const useStyles = makeStyles(theme => ({
   code: {
     fontFamily: "monospace",
     marginTop: "5px",
-    marginBottom: "5px",
-    fontSize: theme.typography.h5.fontSize
+    marginBottom: "5px"
   }
 }));
 
@@ -178,7 +177,7 @@ const TitlePreview = () => {
           onSteamIdUpdated={handleSteamIdRefresh}
           titleText={title}
           onTitleTextUpdated={titleText =>
-            setTitle(titleText.toUpperCase().slice(0, 60))
+            setTitle(titleText.toUpperCase().slice(0, 50))
           }
           textColor={color}
           onTextColorUpdated={setColor}
@@ -194,23 +193,42 @@ const TitlePreview = () => {
       </Box>
       <Box>
         <br />
-        <Typography>Commands:</Typography>
-        <p className={classes.code}>{`!set title ${title}`}</p>
-        <p className={classes.code}>{`!set color ${
-          rainbowColorEnabled
-            ? "FF0000::00FF00::0000FF"
-            : color.replace("#", "")
-        }`}</p>
-        <p className={classes.code}>{`!set glow ${
-          glowEnabled
-            ? rainbowGlowEnabled
+        <Typography variant="h5">Command:</Typography>
+        <Typography variant="subtitle1">
+          (copy and paste this command into the{" "}
+          <span className={classes.code}>#set-title</span> Discord channel
+        </Typography>
+        <Typography variant="h5" className={classes.code}>
+          {`!set AllTitle ${
+            rainbowColorEnabled
               ? "FF0000::00FF00::0000FF"
-              : glow.replace("#", "")
-            : "x"
-        }`}</p>
+              : color.replace("#", "")
+          } ${
+            glowEnabled
+              ? rainbowGlowEnabled
+                ? "FF0000::00FF00::0000FF"
+                : glow.replace("#", "")
+              : "x"
+          } ${title}`}
+        </Typography>
       </Box>
     </Box>
   );
 };
 
+/*
+<p className={classes.code}>{`!set title ${title}`}</p>
+<p className={classes.code}>{`!set color ${
+  rainbowColorEnabled
+    ? "FF0000::00FF00::0000FF"
+    : color.replace("#", "")
+}`}</p>
+<p className={classes.code}>{`!set glow ${
+  glowEnabled
+    ? rainbowGlowEnabled
+      ? "FF0000::00FF00::0000FF"
+      : glow.replace("#", "")
+    : "x"
+}`}</p>
+*/
 export default TitlePreview;

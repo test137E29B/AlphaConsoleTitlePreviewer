@@ -46,7 +46,9 @@ const useStyles = makeStyles(theme => ({
     padding: 0,
     margin: 0,
     fontWeight: 600,
-    userSelect: "none"
+    userSelect: "none",
+    overflowWrap: "break-word",
+    textAlign: "left"
   }
 }));
 
@@ -74,12 +76,7 @@ const TitlePreviewGenerator = (props: ITitlePreviewGeneratorProps) => {
   useEffect(() => {
     window.addEventListener("resize", () => setShouldRender(true));
     setInterval(() => {
-      // Ignore when CSS is causing re-renders itself
-      if (
-        shouldRender &&
-        !(glowEnabled && (rainbowGlowColorEnabled || rainbowGlowColorEnabled))
-      )
-        setShouldRender(false);
+      if (shouldRender) setShouldRender(false);
     }, 16.6666667); // 60 times per second
   });
 
@@ -154,7 +151,11 @@ const TitlePreviewGenerator = (props: ITitlePreviewGeneratorProps) => {
             titleText === "SAMPLE TEXT"
               ? "Comic Sans MS"
               : "LiberationMonoRegular"
-          }`
+          }`,
+          maxWidth: `${responsiveCalc(
+            "TITLE TEXT MAX WIDTH",
+            1771 - 260 - 45
+          )}px`
         }}
       >
         {titleText}
