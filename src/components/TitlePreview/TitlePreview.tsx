@@ -196,7 +196,7 @@ const TitlePreview = () => {
         <Typography variant="h5">Command:</Typography>
         <Typography variant="subtitle1">
           (copy and paste this command into the{" "}
-          <span className={classes.code}>#set-title</span> Discord channel
+          <span className={classes.code}>#set-title</span> Discord channel)
         </Typography>
         <Typography variant="h5" className={classes.code}>
           {`!set AllTitle ${
